@@ -1,0 +1,81 @@
+{
+  "name": "nuxt-gunsnprices",
+  "version": "0.1.0",
+  "description": "Nuxt components and composables for gun and ammo sites: product specs from a listing title, caliber badges and cost per round. Powered by the GunsNPrices parser.",
+  "homepage": "https://gunsnprices.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gunsnprices/nuxt-gunsnprices.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gunsnprices/nuxt-gunsnprices/issues"
+  },
+  "author": "GunsNPrices <app@gunsnprices.com> (https://gunsnprices.com)",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "workspaces": [
+    "playground"
+  ],
+  "keywords": [
+    "nuxt",
+    "nuxt-module",
+    "vue",
+    "components",
+    "composables",
+    "firearms",
+    "guns",
+    "ammo",
+    "ammunition",
+    "caliber",
+    "cost-per-round",
+    "gunsnprices"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "dev": "npm run dev:prepare && nuxt dev playground",
+    "dev:build": "nuxt build playground",
+    "dev:generate": "nuxt generate playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^4.6.4",
+    "gunsnprices": "^0.1.2"
+  },
+  "devDependencies": {
+    "@nuxt/eslint-config": "^1.17.0",
+    "@nuxt/module-builder": "^1.0.3",
+    "@nuxt/schema": "^4.6.4",
+    "@nuxt/test-utils": "^4.3.3",
+    "@vue/test-utils": "^2.4.6",
+    "eslint": "^10.12.0",
+    "happy-dom": "^20.0.0",
+    "nuxt": "^4.6.4",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.3",
+    "vue-tsc": "^3.3.12"
+  }
+}

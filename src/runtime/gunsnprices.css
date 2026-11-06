@@ -1,0 +1,43 @@
+.gnp-caliber {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  padding: 0.1em 0.55em;
+  border: 1px solid var(--gnp-border, rgb(128 128 128 / 0.35));
+  border-radius: 999px;
+  font-size: 0.9em;
+  line-height: 1.5;
+  white-space: nowrap;
+  color: inherit;
+  text-decoration: none;
+}
+a.gnp-caliber:hover {
+  border-color: currentColor;
+}
+.gnp-caliber__type {
+  opacity: 0.65;
+  font-size: 0.85em;
+}
+.gnp-specs {
+  display: grid;
+  margin: 0;
+  border: 1px solid var(--gnp-border, rgb(128 128 128 / 0.3));
+  border-radius: var(--gnp-radius, 6px);
+  overflow: hidden;
+}
+.gnp-specs__row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 35%) 1fr;
+}
+.gnp-specs__row + .gnp-specs__row {
+  border-top: 1px solid var(--gnp-border, rgb(128 128 128 / 0.3));
+}
+.gnp-specs dt,
+.gnp-specs dd {
+  margin: 0;
+  padding: 0.45rem 0.75rem;
+}
+.gnp-specs dt {
+  font-weight: 600;
+  background: var(--gnp-label-bg, rgb(128 128 128 / 0.08));
+}
